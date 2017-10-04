@@ -1,2 +1,4 @@
-# CDDLabs
-Distributed and Concurrent Device Development 
+CDDLabs
+<<
+Distributed and Concurrent Device Development
+
