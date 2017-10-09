@@ -1,6 +1,6 @@
-## Daniel Hayden
-## Date: 4/10/17
-## signal is the main class for the program
+// Daniel Hayden
+// Date: 4/10/17
+// signal is the main class for the program
 
 #include "Semaphore.h"
 #include <iostream>

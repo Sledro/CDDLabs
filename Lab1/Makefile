@@ -12,7 +12,7 @@ OBJ = Semaphore.o signal.o
 	$(CC) -c -o $@ $< $(CFLAGS)
 
 Semaphore: $(OBJ)
-	g++ -o $@ $^ $(CFLAGS)
+	g++ -lpthread -o $@ $^ $(CFLAGS)
 
 
 CLEAN:
