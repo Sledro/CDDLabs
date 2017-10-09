@@ -1,18 +1,19 @@
 ## Daniel Hayden
 ## Date: 4/10/17
 ## Makefile g++
+## Note this makefile was tested and working on mac
 
 CC=g++
 CFLAGS=-I.
-
+LDFLAGS=-pthread 
 DEPS = Semaphore.h
-OBJ = Semaphore.o signal.o 
-
+OBJ = Semaphore.o signal.o
+CXXFLAGS	= -std=c++11 -ggdb -Wall
 %.o: %.c $(DEPS)
 	$(CC) -c -o $@ $< $(CFLAGS)
 
 Semaphore: $(OBJ)
-	g++ -lpthread -o $@ $^ $(CFLAGS)
+	g++ -o $@ $^ $(CFLAGS)
 
 
 CLEAN:

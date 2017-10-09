@@ -9,14 +9,13 @@
 void taskOne(std::shared_ptr<Semaphore> theSemaphore){
   std::cout << "Running task A1."<<std::endl;
   theSemaphore->Signal();
-  theSemaphore->Wait(); //Thread one is going to wait on thread two
+  theSemaphore->Wait();
   std::cout << "Run A2."<<std::endl;
  
 }
 void taskTwo(std::shared_ptr<Semaphore> theSemaphore){
   theSemaphore->Wait();
   std::cout << "Running task B1."<<std::endl;
-  theSemaphore->Signal();
   theSemaphore->Wait(); //Thread one is going to wait on thread two
   std::cout << "Run B2."<<std::endl;
 }
