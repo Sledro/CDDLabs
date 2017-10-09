@@ -6,7 +6,7 @@ CC=g++
 CFLAGS=-I.
 
 DEPS = Semaphore.h
-OBJ = Semaphore.o rendezvous.o 
+OBJ = Semaphore.o rendezvous.o
 
 %.o: %.c $(DEPS)
 	$(CC) -c -o $@ $< $(CFLAGS)
