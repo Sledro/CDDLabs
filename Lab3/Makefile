@@ -9,6 +9,8 @@ LDFLAGS=-pthread
 DEPS = Semaphore.h
 OBJ = Semaphore.o rendezvous.o
 CXXFLAGS	= -std=c++11 -ggdb -Wall
+DOXYGEN = doxygen
+
 %.o: %.c $(DEPS)
 	$(CC) -c -o $@ $< $(CFLAGS)
 
@@ -17,4 +19,7 @@ Semaphore: $(OBJ)
 
 
 clean:
-	rm *.o
+	rm *.o Semaphore
+
+doc: 
+	$(DOXYGEN) doxConfig
