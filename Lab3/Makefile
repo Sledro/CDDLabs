@@ -7,7 +7,7 @@ CC=g++
 CFLAGS=-I.
 LDFLAGS=-pthread 
 DEPS = Semaphore.h
-OBJ = Semaphore.o rendezvous.o
+OBJ = Semaphore.o mutex.o
 CXXFLAGS	= -std=c++11 -ggdb -Wall
 DOXYGEN = doxygen
 
@@ -22,3 +22,6 @@ clean:
 
 docs: 
 	$(DOXYGEN) Doxyfile
+
+debug: DEBUGFLAGS =-DDEBUG
+debug: Semaphore

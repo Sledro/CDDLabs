@@ -1,0 +1,17 @@
+\hypertarget{class_mutex}{}\section{Mutex Class Reference}
+\label{class_mutex}\index{Mutex@{Mutex}}
+
+
+Method Wait() decrements the counter of the semaphore.  
+
+
+
+
+\subsection{Detailed Description}
+Method Wait() decrements the counter of the semaphore. 
+
+As long as the counter value is positive ($>$0) a call to Wait() has no effect on the execution. Any call to Wait() with a counter value of zero will suspend the calling thread. Each subsequent call of Signal() increments the counter of the semaphore by one and wakes exactly one of the waiting threads (if any) in the order of their arrival (F\+I\+FO order). 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{mutex_8cpp}{mutex.\+cpp}}\end{DoxyCompactItemize}
