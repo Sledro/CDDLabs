@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['semaphore',['Semaphore',['../class_semaphore.html',1,'']]]
+  ['rendezvous',['Rendezvous',['../class_rendezvous.html',1,'']]]
 ];

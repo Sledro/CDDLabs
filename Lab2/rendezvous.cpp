@@ -1,7 +1,9 @@
 // Daniel Hayden
 // Date: 4/10/17
 // rendezvous is the main class for the program
-
+/*! \class Rendezvous
+    \brief Using the Semaphore class create a program that demonstrates the Rendezvous pattern. 
+*/
 #include "Semaphore.h"
 #include <iostream>
 #include <thread>

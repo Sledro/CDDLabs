@@ -6,7 +6,7 @@
 DOXYFILE_ENCODING      = UTF-8
 PROJECT_NAME           = "Lab 2"
 PROJECT_NUMBER         = 0.1
-PROJECT_BRIEF          = "Semaphore signaling in action."
+PROJECT_BRIEF          = "Using the Semaphore class create a program that demonstrates the Rendezvous pattern."
 PROJECT_LOGO           = /Users/sledro/Documents/College/ConcurrentDeviceDevelopment/CDDLabs/Lab2/semaphore.png
 OUTPUT_DIRECTORY       = /Users/sledro/Documents/College/ConcurrentDeviceDevelopment/CDDLabs/Lab2/docs
 CREATE_SUBDIRS         = NO

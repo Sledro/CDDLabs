@@ -1,3 +1,9 @@
+//Daniel Hayden
+//Date: 4/10/17
+//Semaphore class to hold the semaphore funtions
+/*! \class Semaphore
+    \brief Contains our lock and unlock functions 
+*/
 #include "Semaphore.h"
 
 /*! This function will lock the thread.  

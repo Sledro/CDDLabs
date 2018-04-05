@@ -1,7 +1,9 @@
 // Daniel Hayden
 // Date: 4/10/17
 // signal is the main class for the program
-
+/*! \class Signal
+    \brief This main function must create at least two threads where one thread signals the other using a common Semaphore. 
+*/
 #include "Semaphore.h"
 #include <iostream>
 #include <thread>
