@@ -6,13 +6,22 @@
 #include <iostream>
 #include <thread>
 
+/*! An Example function to run an example task called taskOne.  
+    \param Semaphore Object` 
+    \return void.
+*/  
 void taskOne(std::shared_ptr<Semaphore> theSemaphore){
   std::cout << "Print me first First then unlock task 2 to run."<<std::endl;
   theSemaphore->Signal();
 }
+
+/*! An Example function to run an example task called taskTwo.  
+    \param Semaphore Object` 
+    \return void.
+*/  
 void taskTwo(std::shared_ptr<Semaphore> theSemaphore){
   theSemaphore->Wait();
-  std::cout << "I have been unlcoked, print me now."<<std::endl;
+  std::cout << "I have been unlocked, print me now."<<std::endl;
 }
 
 int main(void){

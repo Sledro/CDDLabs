@@ -1,10 +1,9 @@
-// Daniel Hayden
-// Date: 4/10/17
-// Semaphore class to hold the semaphore funtions
-
 #include "Semaphore.h"
 
-// The wait funtion will lock the thread
+/*! This function will lock the thread.  
+    \param null` 
+    \return void.
+*/ 
 void Semaphore::Wait()
 {
       std::unique_lock< std::mutex > lock(m_mutex);
@@ -12,7 +11,10 @@ void Semaphore::Wait()
       --m_uiCount;
 }
 
-// This signal funtion will unlock the thread and allow it to run
+/*! This signal function will unlock the thread and allow it to run.  
+    \param null` 
+    \return void.
+*/ 
 void Semaphore::Signal()
 {
       std::unique_lock< std::mutex > lock(m_mutex);
