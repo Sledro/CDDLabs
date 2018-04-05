@@ -2,7 +2,7 @@
 -Distributed and Concurrent Device Development
 -IT Carlow 4th Year - BSc (Hons) Software Development
 
-# Useage
+# Usage
 
 To **generate documentation** use the command make ```docs```
 
