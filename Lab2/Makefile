@@ -17,9 +17,8 @@ DOXYGEN = doxygen
 Semaphore: $(OBJ)
 	g++ -o $@ $^ $(CFLAGS)
 
-
 clean:
 	rm *.o Semaphore
 
-doc: 
+docs: 
 	$(DOXYGEN) doxConfig

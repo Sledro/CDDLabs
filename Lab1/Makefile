@@ -20,5 +20,5 @@ Semaphore: $(OBJ)
 clean:
 	rm *.o Semaphore
 
-doc: 
+docs: 
 	$(DOXYGEN) doxConfig
