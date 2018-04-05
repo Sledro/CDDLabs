@@ -21,4 +21,4 @@ clean:
 	rm *.o Semaphore
 
 docs: 
-	$(DOXYGEN) doxConfig
+	$(DOXYGEN) Doxyfile
