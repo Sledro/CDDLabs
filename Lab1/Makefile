@@ -16,5 +16,5 @@ Semaphore: $(OBJ)
 	g++ -o $@ $^ $(CFLAGS)
 
 
-CLEAN:
+clean:
 	rm *.o
