@@ -4,6 +4,8 @@
 
 # Useage
 
+To **generate documentation** use the command make ```docs```
+
 To **compile** each Lab use the command ```make```
 
 To **clean** each Lab directory of redundent compiled object files type ```make clean```
