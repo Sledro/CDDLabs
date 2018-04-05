@@ -6,6 +6,11 @@
 #include <iostream>
 #include <thread>
 
+/*! An Example function to run an example task called taskOne.  
+    \param Semaphore1 Object` 
+    \param Semaphore2 Object`
+    \return void.
+*/  
 void taskOne(std::shared_ptr<Semaphore> theSemaphore1, std::shared_ptr<Semaphore> theSemaphore2){
   std::cout << "Queue task A."<<std::endl;
   theSemaphore1->Signal();
@@ -14,6 +19,12 @@ void taskOne(std::shared_ptr<Semaphore> theSemaphore1, std::shared_ptr<Semaphore
   std::cout << "Thread A Complete."<<std::endl;
  
 }
+
+/*! An Example function to run an example task called taskOne.  
+    \param Semaphore1 Object` 
+    \param Semaphore2 Object`
+    \return void.
+*/  
 void taskTwo(std::shared_ptr<Semaphore> theSemaphore1, std::shared_ptr<Semaphore> theSemaphore2){
   std::cout << "Queue task B."<<std::endl;
   theSemaphore2->Signal();
