@@ -32,7 +32,7 @@ void makeProducers(std::shared_ptr<SafeBuffer> safeBuff){
         safeBuff->add(randomChar);
         if(counter==NUM_OF_CHARS_TO_PRODUCE)
             randomChar='X';
-        std::cout << randomChar << " was added to the safe buffer" std::endl;
+        std::cout << randomChar << " was added to the safe buffer" << std::endl;
         counter++;
     }
 }
@@ -42,8 +42,8 @@ void makeProducers(std::shared_ptr<SafeBuffer> safeBuff){
     \param none` 
     \return void.
 */ 
-void makeConsumers(){
-
+void consume(std::shared_ptr<SafeBuffer> safeBuff){
+    safeBuff->remove();
 }
 
 int main(void){

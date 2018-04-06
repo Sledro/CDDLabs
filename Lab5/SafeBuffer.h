@@ -13,5 +13,6 @@ public:
 
     SafeBuffer();
 	void add(char randomChar);
+	void remove();
 };
 

@@ -31,4 +31,10 @@ void SafeBuffer::add(char randomChar){
 
 }
 
+/*! Barrier 1
+    \param null` 
+    \return void.
+*/ 
+void SafeBuffer::remove(){
 
+}
