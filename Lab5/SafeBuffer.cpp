@@ -20,21 +20,33 @@
     \return void.
 */ 
 SafeBuffer::SafeBuffer(){
-	  
+  mutex = std::make_shared<Semaphore>(1);
+  items = std::make_shared<Semaphore>(0);
+  available = std::make_shared<Semaphore>(200);  
 }
 
-/*! Barrier 1
-    \param null` 
+/*! Adds a random char onto the buffer
+    \param randomChar` 
     \return void.
 */ 
 void SafeBuffer::add(char randomChar){
-
+  available->Wait();
+  mutex->Wait();
+  safeBuffer.push(randomChar);
+  mutex->Signal();
+  items->Signal();
 }
 
-/*! Barrier 1
+/*! Pop top char off the buffer
     \param null` 
-    \return void.
+    \return randomChar.
 */ 
-void SafeBuffer::remove(){
-
+char SafeBuffer::remove(){
+  items->Wait();
+  mutex->Wait();
+  char randomChar = safeBuffer.front();
+  safeBuffer.pop();
+  mutex->Signal();
+  available->Signal();
+  return randomChar;
 }

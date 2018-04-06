@@ -1,18 +1,17 @@
 #include <mutex>
-#include <condition_variable>
+#include <queue>
 #include "Semaphore.h"
 
 class SafeBuffer
 {
-private:
- 	int count;
-	int n;
-    std::mutex m_mutex;
-
 public:
-
+	std::queue<char> safeBuffer;
+    std::shared_ptr<Semaphore> mutex;
+	std::shared_ptr<Semaphore> items;
+	std::shared_ptr<Semaphore> available;
     SafeBuffer();
 	void add(char randomChar);
-	void remove();
+	char remove();
+	
 };
 

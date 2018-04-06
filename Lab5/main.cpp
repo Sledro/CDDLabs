@@ -12,6 +12,7 @@
 
 //Number of charater that for the producer method to produce
 int NUM_OF_CHARS_TO_PRODUCE = 20;
+int charCountCentralBuffer;
 
 /*! The producer generates random characters from ‘a’ to ‘z’ at random intervals (between 0 and 1 second in length). It adds these to a thread safe buffer 
     that has a finite holding capacity of N characters. It generates a preset number of characters (determined at runtime) and when it has finished it add 
@@ -43,11 +44,24 @@ void makeProducers(std::shared_ptr<SafeBuffer> safeBuff){
     \return void.
 */ 
 void consume(std::shared_ptr<SafeBuffer> safeBuff){
-    safeBuff->remove();
+
+    char charCount=0; 
+    char randomChar; 
+    randomChar= safeBuff->remove();
+
+    while(randomChar!='X'){
+        std::this_thread::sleep_for(std::chrono::milliseconds(std::rand()%1000));
+        randomChar= safeBuff->remove();
+        std::cout << randomChar << " was removed from the safe buffer" << std::endl;
+        charCount++;
+        if(randomChar=='X')
+            charCountCentralBuffer=charCount;
+    }
 }
 
 int main(void){
     std::shared_ptr<SafeBuffer> safeBuff(new SafeBuffer);
     makeProducers(safeBuff);
+    consume(safeBuff);
     return 0;
 }
