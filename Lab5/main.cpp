@@ -15,8 +15,18 @@
     \param none` 
     \return void.
 */ 
-void makeProducers(){
+void makeProducers(std::shared_ptr<SafeBuffer> safeBuff){
 
+    char letters[] = "abcdefghijklmnopqrstuvwxyz";
+    char randomChar;
+
+    while(randomChar!='X'){
+
+        //pick a random character between 0 and the number of characters stored in the array
+        randomChar = letters[rand() % 26];
+        safeBuff->add(randomChar);
+        std::cout << randomChar << std::endl;
+    }
 }
 
 /*! The consumer takes these letters from the buffer at random time intervals (between 0 and 1 second in length) and records how many of each letter it 
@@ -24,7 +34,7 @@ void makeProducers(){
     \param none` 
     \return void.
 */ 
-void makeConsumer(){
+void makeConsumers(){
 
 }
 

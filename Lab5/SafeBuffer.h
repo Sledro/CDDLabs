@@ -12,6 +12,6 @@ private:
 public:
 
     SafeBuffer();
-	void add();
+	void add(char randomChar);
 };
 

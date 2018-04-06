@@ -27,7 +27,7 @@ SafeBuffer::SafeBuffer(){
     \param null` 
     \return void.
 */ 
-void SafeBuffer::add(){
+void SafeBuffer::add(char randomChar){
 
 }
 
