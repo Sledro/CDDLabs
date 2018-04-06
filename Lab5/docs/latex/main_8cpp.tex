@@ -1,0 +1,83 @@
+\hypertarget{main_8cpp}{}\section{main.\+cpp File Reference}
+\label{main_8cpp}\index{main.\+cpp@{main.\+cpp}}
+{\ttfamily \#include \char`\"{}Safe\+Buffer.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$thread$>$}\newline
+{\ttfamily \#include $<$mutex$>$}\newline
+{\ttfamily \#include $<$chrono$>$}\newline
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{main_8cpp_aeb36c2758f0702c34c888c2939df64f6}{make\+Producers}} (std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_safe_buffer}{Safe\+Buffer}} $>$ safe\+Buff)
+\begin{DoxyCompactList}\small\item\em The producer generates random characters from ‘a’ to ‘z’ at random intervals (between 0 and 1 second in length). \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{main_8cpp_ae3526b0775b9e666a6db3f9c95e53fbc}{consume}} (std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_safe_buffer}{Safe\+Buffer}} $>$ safe\+Buff)
+\begin{DoxyCompactList}\small\item\em The consumer takes these letters from the buffer at random time intervals (between 0 and 1 second in length) and records how many of each letter it consumes. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{main_8cpp_a840291bc02cba5474a4cb46a9b9566fe}{main}} (void)
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{main_8cpp_a568121d0e8517f84f9f8186404fc41f8}{N\+U\+M\+\_\+\+O\+F\+\_\+\+C\+H\+A\+R\+S\+\_\+\+T\+O\+\_\+\+P\+R\+O\+D\+U\+CE}} = 20
+\item 
+int \mbox{\hyperlink{main_8cpp_ab93d7258a0c25d8655e045b14ff99328}{char\+Count\+Central\+Buffer}}
+\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{main_8cpp_ae3526b0775b9e666a6db3f9c95e53fbc}\label{main_8cpp_ae3526b0775b9e666a6db3f9c95e53fbc}} 
+\index{main.\+cpp@{main.\+cpp}!consume@{consume}}
+\index{consume@{consume}!main.\+cpp@{main.\+cpp}}
+\subsubsection{\texorpdfstring{consume()}{consume()}}
+{\footnotesize\ttfamily void consume (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_safe_buffer}{Safe\+Buffer}} $>$}]{safe\+Buff }\end{DoxyParamCaption})}
+
+
+
+The consumer takes these letters from the buffer at random time intervals (between 0 and 1 second in length) and records how many of each letter it consumes. 
+
+Once it sees an ‘\+X’ in the buffer it adds its character count to a central buffer and exits. 
+\begin{DoxyParams}{Parameters}
+{\em none\`{}} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{main_8cpp_a840291bc02cba5474a4cb46a9b9566fe}\label{main_8cpp_a840291bc02cba5474a4cb46a9b9566fe}} 
+\index{main.\+cpp@{main.\+cpp}!main@{main}}
+\index{main@{main}!main.\+cpp@{main.\+cpp}}
+\subsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{main_8cpp_aeb36c2758f0702c34c888c2939df64f6}\label{main_8cpp_aeb36c2758f0702c34c888c2939df64f6}} 
+\index{main.\+cpp@{main.\+cpp}!make\+Producers@{make\+Producers}}
+\index{make\+Producers@{make\+Producers}!main.\+cpp@{main.\+cpp}}
+\subsubsection{\texorpdfstring{make\+Producers()}{makeProducers()}}
+{\footnotesize\ttfamily void make\+Producers (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_safe_buffer}{Safe\+Buffer}} $>$}]{safe\+Buff }\end{DoxyParamCaption})}
+
+
+
+The producer generates random characters from ‘a’ to ‘z’ at random intervals (between 0 and 1 second in length). 
+
+It adds these to a thread safe buffer that has a finite holding capacity of N characters. It generates a preset number of characters (determined at runtime) and when it has finished it add an ‘\+X’ character to the buffer and exits. 
+\begin{DoxyParams}{Parameters}
+{\em none\`{}} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void.\+¸ 
+\end{DoxyReturn}
+
+
+\subsection{Variable Documentation}
+\mbox{\Hypertarget{main_8cpp_ab93d7258a0c25d8655e045b14ff99328}\label{main_8cpp_ab93d7258a0c25d8655e045b14ff99328}} 
+\index{main.\+cpp@{main.\+cpp}!char\+Count\+Central\+Buffer@{char\+Count\+Central\+Buffer}}
+\index{char\+Count\+Central\+Buffer@{char\+Count\+Central\+Buffer}!main.\+cpp@{main.\+cpp}}
+\subsubsection{\texorpdfstring{char\+Count\+Central\+Buffer}{charCountCentralBuffer}}
+{\footnotesize\ttfamily int char\+Count\+Central\+Buffer}
+
+\mbox{\Hypertarget{main_8cpp_a568121d0e8517f84f9f8186404fc41f8}\label{main_8cpp_a568121d0e8517f84f9f8186404fc41f8}} 
+\index{main.\+cpp@{main.\+cpp}!N\+U\+M\+\_\+\+O\+F\+\_\+\+C\+H\+A\+R\+S\+\_\+\+T\+O\+\_\+\+P\+R\+O\+D\+U\+CE@{N\+U\+M\+\_\+\+O\+F\+\_\+\+C\+H\+A\+R\+S\+\_\+\+T\+O\+\_\+\+P\+R\+O\+D\+U\+CE}}
+\index{N\+U\+M\+\_\+\+O\+F\+\_\+\+C\+H\+A\+R\+S\+\_\+\+T\+O\+\_\+\+P\+R\+O\+D\+U\+CE@{N\+U\+M\+\_\+\+O\+F\+\_\+\+C\+H\+A\+R\+S\+\_\+\+T\+O\+\_\+\+P\+R\+O\+D\+U\+CE}!main.\+cpp@{main.\+cpp}}
+\subsubsection{\texorpdfstring{N\+U\+M\+\_\+\+O\+F\+\_\+\+C\+H\+A\+R\+S\+\_\+\+T\+O\+\_\+\+P\+R\+O\+D\+U\+CE}{NUM\_OF\_CHARS\_TO\_PRODUCE}}
+{\footnotesize\ttfamily int N\+U\+M\+\_\+\+O\+F\+\_\+\+C\+H\+A\+R\+S\+\_\+\+T\+O\+\_\+\+P\+R\+O\+D\+U\+CE = 20}
+

@@ -1,0 +1,119 @@
+\hypertarget{class_safe_buffer}{}\section{Safe\+Buffer Class Reference}
+\label{class_safe_buffer}\index{Safe\+Buffer@{Safe\+Buffer}}
+
+
+{\ttfamily \#include $<$Safe\+Buffer.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_safe_buffer_af835d8d08c4dcd3326f21ae2e9988699}{Safe\+Buffer}} ()
+\begin{DoxyCompactList}\small\item\em Constructor, takes in the number of threads from the main driver. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_safe_buffer_a4181b91d780945dd6a8ccd4d9a8b5345}{add}} (char random\+Char)
+\begin{DoxyCompactList}\small\item\em Adds a random char onto the buffer. \end{DoxyCompactList}\item 
+char \mbox{\hyperlink{class_safe_buffer_a164e4756c5e2f1ed4940e08f37366c9f}{remove}} ()
+\begin{DoxyCompactList}\small\item\em Pop top char off the buffer. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::queue$<$ char $>$ \mbox{\hyperlink{class_safe_buffer_a8db738cc1b4be3eeba47f322008a2c3e}{safe\+Buffer}}
+\item 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_semaphore}{Semaphore}} $>$ \mbox{\hyperlink{class_safe_buffer_a7f90950b182359904348ff978ebb96c6}{mutex}}
+\item 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_semaphore}{Semaphore}} $>$ \mbox{\hyperlink{class_safe_buffer_aab374b9839a583473e1ec8938715a8e7}{items}}
+\item 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_semaphore}{Semaphore}} $>$ \mbox{\hyperlink{class_safe_buffer_a0ad0b633fecd803a5c061635be0f6d31}{available}}
+\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_safe_buffer_af835d8d08c4dcd3326f21ae2e9988699}\label{class_safe_buffer_af835d8d08c4dcd3326f21ae2e9988699}} 
+\index{Safe\+Buffer@{Safe\+Buffer}!Safe\+Buffer@{Safe\+Buffer}}
+\index{Safe\+Buffer@{Safe\+Buffer}!Safe\+Buffer@{Safe\+Buffer}}
+\subsubsection{\texorpdfstring{Safe\+Buffer()}{SafeBuffer()}}
+{\footnotesize\ttfamily Safe\+Buffer\+::\+Safe\+Buffer (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Constructor, takes in the number of threads from the main driver. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em count} & -\/ number of threads\`{} \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void. 
+\end{DoxyReturn}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_safe_buffer_a4181b91d780945dd6a8ccd4d9a8b5345}\label{class_safe_buffer_a4181b91d780945dd6a8ccd4d9a8b5345}} 
+\index{Safe\+Buffer@{Safe\+Buffer}!add@{add}}
+\index{add@{add}!Safe\+Buffer@{Safe\+Buffer}}
+\subsubsection{\texorpdfstring{add()}{add()}}
+{\footnotesize\ttfamily void Safe\+Buffer\+::add (\begin{DoxyParamCaption}\item[{char}]{random\+Char }\end{DoxyParamCaption})}
+
+
+
+Adds a random char onto the buffer. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em random\+Char\`{}} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_safe_buffer_a164e4756c5e2f1ed4940e08f37366c9f}\label{class_safe_buffer_a164e4756c5e2f1ed4940e08f37366c9f}} 
+\index{Safe\+Buffer@{Safe\+Buffer}!remove@{remove}}
+\index{remove@{remove}!Safe\+Buffer@{Safe\+Buffer}}
+\subsubsection{\texorpdfstring{remove()}{remove()}}
+{\footnotesize\ttfamily char Safe\+Buffer\+::remove (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Pop top char off the buffer. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em null\`{}} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+random\+Char. 
+\end{DoxyReturn}
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{class_safe_buffer_a0ad0b633fecd803a5c061635be0f6d31}\label{class_safe_buffer_a0ad0b633fecd803a5c061635be0f6d31}} 
+\index{Safe\+Buffer@{Safe\+Buffer}!available@{available}}
+\index{available@{available}!Safe\+Buffer@{Safe\+Buffer}}
+\subsubsection{\texorpdfstring{available}{available}}
+{\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$\mbox{\hyperlink{class_semaphore}{Semaphore}}$>$ Safe\+Buffer\+::available}
+
+\mbox{\Hypertarget{class_safe_buffer_aab374b9839a583473e1ec8938715a8e7}\label{class_safe_buffer_aab374b9839a583473e1ec8938715a8e7}} 
+\index{Safe\+Buffer@{Safe\+Buffer}!items@{items}}
+\index{items@{items}!Safe\+Buffer@{Safe\+Buffer}}
+\subsubsection{\texorpdfstring{items}{items}}
+{\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$\mbox{\hyperlink{class_semaphore}{Semaphore}}$>$ Safe\+Buffer\+::items}
+
+\mbox{\Hypertarget{class_safe_buffer_a7f90950b182359904348ff978ebb96c6}\label{class_safe_buffer_a7f90950b182359904348ff978ebb96c6}} 
+\index{Safe\+Buffer@{Safe\+Buffer}!mutex@{mutex}}
+\index{mutex@{mutex}!Safe\+Buffer@{Safe\+Buffer}}
+\subsubsection{\texorpdfstring{mutex}{mutex}}
+{\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$\mbox{\hyperlink{class_semaphore}{Semaphore}}$>$ Safe\+Buffer\+::mutex}
+
+\mbox{\Hypertarget{class_safe_buffer_a8db738cc1b4be3eeba47f322008a2c3e}\label{class_safe_buffer_a8db738cc1b4be3eeba47f322008a2c3e}} 
+\index{Safe\+Buffer@{Safe\+Buffer}!safe\+Buffer@{safe\+Buffer}}
+\index{safe\+Buffer@{safe\+Buffer}!Safe\+Buffer@{Safe\+Buffer}}
+\subsubsection{\texorpdfstring{safe\+Buffer}{safeBuffer}}
+{\footnotesize\ttfamily std\+::queue$<$char$>$ Safe\+Buffer\+::safe\+Buffer}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{_safe_buffer_8h}{Safe\+Buffer.\+h}}\item 
+\mbox{\hyperlink{_safe_buffer_8cpp}{Safe\+Buffer.\+cpp}}\end{DoxyCompactItemize}

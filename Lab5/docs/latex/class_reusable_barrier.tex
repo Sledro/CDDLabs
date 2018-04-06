@@ -1,0 +1,17 @@
+\hypertarget{class_reusable_barrier}{}\section{Reusable\+Barrier Class Reference}
+\label{class_reusable_barrier}\index{Reusable\+Barrier@{Reusable\+Barrier}}
+
+
+N\+O\+TE\+: These comments are notes to self and taken from The Little Book of Semaphores chapter 3.\+7.\+7.  
+
+
+
+
+\subsection{Detailed Description}
+N\+O\+TE\+: These comments are notes to self and taken from The Little Book of Semaphores chapter 3.\+7.\+7. 
+
+Reusable barrier using turnstiles as in The Little Book of Semaphores chapter 3.\+7.\+7 Barrier objects in Python When the nth thread arrives, it preloads the first turnstile with one signal for each thread. When the nth thread passes the turnstile, it “takes the last token” and leaves the turnstile locked again. The same thing happens at the second turnstile, which is unlocked when the last thread goes through the mutex. This solution is sometimes called a two-\/phase barrier because it forces all the threads to wait twice\+: once for all the threads to arrive and again for all the threads to execute the critical section. 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{_safe_buffer_8cpp}{Safe\+Buffer.\+cpp}}\end{DoxyCompactItemize}
