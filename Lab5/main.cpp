@@ -4,38 +4,31 @@
 /*! \class Mutex
     \brief Reusable barrier using turnstiles as in The Little Book of Semaphores 
 */
-#include "ReusableBarrier.h"
+#include "SafeBuffer.h"
 #include <iostream>
 #include <thread>
 #include <mutex>
 
-/*! Critical task example
-    \param rBarrier is an instance of our ReusableBarrier class` 
+/*! The producer generates random characters from ‘a’ to ‘z’ at random intervals (between 0 and 1 second in length). It adds these to a thread safe buffer 
+    that has a finite holding capacity of N characters. It generates a preset number of characters (determined at runtime) and when it has finished it add 
+    an ‘X’ character to the buffer and exits.
+    \param none` 
     \return void.
 */ 
-void criticalQueueFunction(std::shared_ptr<ReusableBarrier> rBarrier){
-    rBarrier->Phase1();
-    std::cout << "Threads reached Phase 1...\n";
-    rBarrier->Phase2();
-    std::cout << "Threads reached Phase 2...\n" ;
+void makeProducers(){
+
+}
+
+/*! The consumer takes these letters from the buffer at random time intervals (between 0 and 1 second in length) and records how many of each letter it 
+    consumes. Once it sees an ‘X’ in the buffer it adds its character count to a central buffer and exits.
+    \param none` 
+    \return void.
+*/ 
+void makeConsumer(){
+
 }
 
 int main(void){
-    int numThreads = 5;
-    std::thread threadOne, threadTwo, threadThree, threadFour, threadFive;
-    std::shared_ptr<ReusableBarrier> rBarrier(new ReusableBarrier(numThreads));
 
-    threadOne=std::thread(criticalQueueFunction, rBarrier);
-    threadTwo=std::thread(criticalQueueFunction, rBarrier);
-    threadThree=std::thread(criticalQueueFunction, rBarrier);
-    threadFour=std::thread(criticalQueueFunction, rBarrier);
-    threadFive=std::thread(criticalQueueFunction, rBarrier);
-
-    std::cout << "Main method started..\n";
-    threadOne.join();
-    threadTwo.join();
-    threadThree.join();
-    threadFour.join();
-    threadFive.join();
     return 0;
 }
