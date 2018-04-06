@@ -20,7 +20,7 @@ Semaphore: $(OBJ)
 clean:
 	rm *.o Semaphore
 
-docs: 
+doc: 
 	$(DOXYGEN) Doxyfile
 
 debug: DEBUGFLAGS =-DDEBUG

@@ -4,7 +4,7 @@
 
 # Usage
 
-To **generate documentation** use the command make ```docs```
+To **generate documentation** use the command make ```doc```
 
 To **compile** each Lab use the command ```make```
 
