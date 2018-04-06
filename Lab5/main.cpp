@@ -8,6 +8,7 @@
 #include <iostream>
 #include <thread>
 #include <mutex>
+#include <chrono>
 
 /*! The producer generates random characters from ‘a’ to ‘z’ at random intervals (between 0 and 1 second in length). It adds these to a thread safe buffer 
     that has a finite holding capacity of N characters. It generates a preset number of characters (determined at runtime) and when it has finished it add 
@@ -18,10 +19,10 @@
 void makeProducers(std::shared_ptr<SafeBuffer> safeBuff){
 
     char letters[] = "abcdefghijklmnopqrstuvwxyz";
-    char randomChar;
+    char randomChar = letters[rand() % 26];
 
     while(randomChar!='X'){
-
+        std::this_thread::sleep_for(std::chrono::milliseconds(std::rand()%1000));
         //pick a random character between 0 and the number of characters stored in the array
         randomChar = letters[rand() % 26];
         safeBuff->add(randomChar);
@@ -39,6 +40,7 @@ void makeConsumers(){
 }
 
 int main(void){
-
+    std::shared_ptr<SafeBuffer> safeBuff(new SafeBuffer);
+    makeProducers(safeBuff);
     return 0;
 }

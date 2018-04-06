@@ -6,8 +6,8 @@
 CC=g++
 CFLAGS=-I.
 LDFLAGS=-pthread 
-DEPS = Semaphore.h ReusableBarrier.h 
-OBJ = Semaphore.o ReusableBarrier.o main.o
+DEPS = Semaphore.h SafeBuffer.h 
+OBJ = Semaphore.o SafeBuffer.o main.o
 CXXFLAGS = -std=c++11 -ggdb -Wall
 DOXYGEN = doxygen
 
