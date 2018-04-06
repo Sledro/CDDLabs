@@ -61,7 +61,20 @@ void consume(std::shared_ptr<SafeBuffer> safeBuff){
 
 int main(void){
     std::shared_ptr<SafeBuffer> safeBuff(new SafeBuffer);
-    makeProducers(safeBuff);
-    consume(safeBuff);
+    std::thread producerThreads[3];
+    std::thread consumerThreads[3];
+
+    for ( int i = 0; i < 3; i++ ) {
+        producerThreads[i] = std::thread(makeProducers, safeBuff);
+        consumerThreads[i] = std::thread(consume, safeBuff);
+    }
+
+    for ( int i = 0; i < 3; ++i ) {
+        producerThreads[i].join();
+        consumerThreads[i].join();
+    }
+
+    std::cout << charCountCentralBuffer << " was added to the central buffer" << std::endl;
+
     return 0;
 }
