@@ -1,0 +1,141 @@
+\hypertarget{class_reusable_barrier}{}\section{Reusable\+Barrier Class Reference}
+\label{class_reusable_barrier}\index{Reusable\+Barrier@{Reusable\+Barrier}}
+
+
+N\+O\+TE\+: These comments are notes to self and taken from The Little Book of Semaphores chapter 3.\+7.\+7.  
+
+
+
+
+{\ttfamily \#include $<$Reusable\+Barrier.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_reusable_barrier_ae383e4b8c0407a21bbf47c6fccec6b15}{Reusable\+Barrier}} (int count)
+\begin{DoxyCompactList}\small\item\em Constructor, takes in the number of threads from the main driver. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_reusable_barrier_ad3545683b5538142ca6377c3a95552f2}{Wait}} ()
+\begin{DoxyCompactList}\small\item\em Wait runs Phase one and Phase two. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_reusable_barrier_a9335a815242eff0807f91b63416d4e56}{Phase1}} ()
+\begin{DoxyCompactList}\small\item\em Barrier 1. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_reusable_barrier_a32b1701adeedd4d968118a152cd3f47d}{Phase2}} ()
+\begin{DoxyCompactList}\small\item\em Barrier 2. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_semaphore}{Semaphore}} $>$ \mbox{\hyperlink{class_reusable_barrier_a57c8cdb580366e8516d7af2f55fb3ddb}{mutex}}
+\item 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_semaphore}{Semaphore}} $>$ \mbox{\hyperlink{class_reusable_barrier_a1fdd613c9544878112266f8f65797570}{turnstile}}
+\item 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_semaphore}{Semaphore}} $>$ \mbox{\hyperlink{class_reusable_barrier_a010da417ee66e6103e57004f9dbe2347}{turnstile2}}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+N\+O\+TE\+: These comments are notes to self and taken from The Little Book of Semaphores chapter 3.\+7.\+7. 
+
+Reusable barrier using turnstiles as in The Little Book of Semaphores chapter 3.\+7.\+7 Barrier objects in Python When the nth thread arrives, it preloads the first turnstile with one signal for each thread. When the nth thread passes the turnstile, it “takes the last token” and leaves the turnstile locked again. The same thing happens at the second turnstile, which is unlocked when the last thread goes through the mutex. This solution is sometimes called a two-\/phase barrier because it forces all the threads to wait twice\+: once for all the threads to arrive and again for all the threads to execute the critical section. 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_reusable_barrier_ae383e4b8c0407a21bbf47c6fccec6b15}\label{class_reusable_barrier_ae383e4b8c0407a21bbf47c6fccec6b15}} 
+\index{Reusable\+Barrier@{Reusable\+Barrier}!Reusable\+Barrier@{Reusable\+Barrier}}
+\index{Reusable\+Barrier@{Reusable\+Barrier}!Reusable\+Barrier@{Reusable\+Barrier}}
+\subsubsection{\texorpdfstring{Reusable\+Barrier()}{ReusableBarrier()}}
+{\footnotesize\ttfamily Reusable\+Barrier\+::\+Reusable\+Barrier (\begin{DoxyParamCaption}\item[{int}]{count }\end{DoxyParamCaption})}
+
+
+
+Constructor, takes in the number of threads from the main driver. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em count} & -\/ number of threads\`{} \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void. 
+\end{DoxyReturn}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_reusable_barrier_a9335a815242eff0807f91b63416d4e56}\label{class_reusable_barrier_a9335a815242eff0807f91b63416d4e56}} 
+\index{Reusable\+Barrier@{Reusable\+Barrier}!Phase1@{Phase1}}
+\index{Phase1@{Phase1}!Reusable\+Barrier@{Reusable\+Barrier}}
+\subsubsection{\texorpdfstring{Phase1()}{Phase1()}}
+{\footnotesize\ttfamily void Reusable\+Barrier\+::\+Phase1 (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Barrier 1. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em null\`{}} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_reusable_barrier_a32b1701adeedd4d968118a152cd3f47d}\label{class_reusable_barrier_a32b1701adeedd4d968118a152cd3f47d}} 
+\index{Reusable\+Barrier@{Reusable\+Barrier}!Phase2@{Phase2}}
+\index{Phase2@{Phase2}!Reusable\+Barrier@{Reusable\+Barrier}}
+\subsubsection{\texorpdfstring{Phase2()}{Phase2()}}
+{\footnotesize\ttfamily void Reusable\+Barrier\+::\+Phase2 (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Barrier 2. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em null\`{}} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_reusable_barrier_ad3545683b5538142ca6377c3a95552f2}\label{class_reusable_barrier_ad3545683b5538142ca6377c3a95552f2}} 
+\index{Reusable\+Barrier@{Reusable\+Barrier}!Wait@{Wait}}
+\index{Wait@{Wait}!Reusable\+Barrier@{Reusable\+Barrier}}
+\subsubsection{\texorpdfstring{Wait()}{Wait()}}
+{\footnotesize\ttfamily void Reusable\+Barrier\+::\+Wait (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Wait runs Phase one and Phase two. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em null\`{}} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void. 
+\end{DoxyReturn}
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{class_reusable_barrier_a57c8cdb580366e8516d7af2f55fb3ddb}\label{class_reusable_barrier_a57c8cdb580366e8516d7af2f55fb3ddb}} 
+\index{Reusable\+Barrier@{Reusable\+Barrier}!mutex@{mutex}}
+\index{mutex@{mutex}!Reusable\+Barrier@{Reusable\+Barrier}}
+\subsubsection{\texorpdfstring{mutex}{mutex}}
+{\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$\mbox{\hyperlink{class_semaphore}{Semaphore}}$>$ Reusable\+Barrier\+::mutex}
+
+\mbox{\Hypertarget{class_reusable_barrier_a1fdd613c9544878112266f8f65797570}\label{class_reusable_barrier_a1fdd613c9544878112266f8f65797570}} 
+\index{Reusable\+Barrier@{Reusable\+Barrier}!turnstile@{turnstile}}
+\index{turnstile@{turnstile}!Reusable\+Barrier@{Reusable\+Barrier}}
+\subsubsection{\texorpdfstring{turnstile}{turnstile}}
+{\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$\mbox{\hyperlink{class_semaphore}{Semaphore}}$>$ Reusable\+Barrier\+::turnstile}
+
+\mbox{\Hypertarget{class_reusable_barrier_a010da417ee66e6103e57004f9dbe2347}\label{class_reusable_barrier_a010da417ee66e6103e57004f9dbe2347}} 
+\index{Reusable\+Barrier@{Reusable\+Barrier}!turnstile2@{turnstile2}}
+\index{turnstile2@{turnstile2}!Reusable\+Barrier@{Reusable\+Barrier}}
+\subsubsection{\texorpdfstring{turnstile2}{turnstile2}}
+{\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$\mbox{\hyperlink{class_semaphore}{Semaphore}}$>$ Reusable\+Barrier\+::turnstile2}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{_reusable_barrier_8h}{Reusable\+Barrier.\+h}}\item 
+\mbox{\hyperlink{_reusable_barrier_8cpp}{Reusable\+Barrier.\+cpp}}\end{DoxyCompactItemize}
